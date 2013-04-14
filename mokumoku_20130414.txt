@@ -1,0 +1,503 @@
+西脇.rb&東灘.rb合同もくもく会 2nd
+http://nishiwaki-higashinadarb.doorkeeper.jp/events/3270?utm_campaign=event_3270&utm_medium=email&utm_source=ticket
+
+
+
+◇新規アプリケーション作成時にエラー発生
+    C:\Dropbox\ror_sample>rails new book
+          create
+          create  README.rdoc
+          [ 中略 ]
+          create  vendor/plugins/.gitkeep
+             run  bundle install
+    Fetching gem metadata from https://rubygems.org/...........
+    Fetching gem metadata from https://rubygems.org/..
+
+    Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=SSLv3 read
+    server certificate B: certificate verify failed (https://rubygems.org/gems/rake-
+    10.0.4.gem)
+    An error occured while installing rake (10.0.4), and Bundler cannot continue.
+    Make sure that `gem install rake -v '10.0.4'` succeeds before bundling.
+
+  ということで、
+    C:\Dropbox\ror_sample>gem install rake -v '10.0.4'
+    Fetching: rake-10.0.4.gem (100%)
+    Successfully installed rake-10.0.4
+    1 gem installed
+    Installing ri documentation for rake-10.0.4...
+    Installing RDoc documentation for rake-10.0.4...
+
+　しかし、
+    C:\Dropbox\ror_sample>rails new book
+          create
+          create  README.rdoc
+          [ 中略 ]
+         run  bundle install
+    Fetching gem metadata from https://rubygems.org/...........
+    Fetching gem metadata from https://rubygems.org/..
+    Using rake (10.0.4)
+    Using i18n (0.6.4)
+    Using multi_json (1.7.2)
+    Using activesupport (3.2.8)
+    Using builder (3.0.4)
+    Using activemodel (3.2.8)
+    Using erubis (2.7.0)
+    Using journey (1.0.4)
+    Using rack (1.4.5)
+    Using rack-cache (1.2)
+    Using rack-test (0.6.2)
+
+    Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=SSLv3 read
+    server certificate B: certificate verify failed (https://rubygems.org/gems/hike-
+    1.2.2.gem)
+    An error occured while installing hike (1.2.2), and Bundler cannot continue.
+    Make sure that `gem install hike -v '1.2.2'` succeeds before bundling.
+
+　そこで、
+    C:\Dropbox\ror_sample>gem install hike -v '1.2.2'
+    Fetching: hike-1.2.2.gem (100%)
+    Successfully installed hike-1.2.2
+    1 gem installed
+    Installing ri documentation for hike-1.2.2...
+    Installing RDoc documentation for hike-1.2.2...
+
+　再度試みるが、またも
+    Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=SSLv3 read
+    server certificate B: certificate verify failed (https://rubygems.org/gems/tilt-
+    1.3.7.gem)
+    An error occured while installing tilt (1.3.7), and Bundler cannot continue.
+    Make sure that `gem install tilt -v '1.3.7'` succeeds before bundling.
+
+　そして、
+    C:\Dropbox\ror_sample>gem install tilt -v '1.3.7'
+    Fetching: tilt-1.3.7.gem (100%)
+    Successfully installed tilt-1.3.7
+    1 gem installed
+    Installing ri documentation for tilt-1.3.7...
+    Installing RDoc documentation for tilt-1.3.7...
+
+　するも、
+    Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=SSLv3 read
+    server certificate B: certificate verify failed (https://rubygems.org/gems/mime-
+    types-1.22.gem)
+    An error occured while installing mime-types (1.22), and Bundler cannot continue
+    .
+    Make sure that `gem install mime-types -v '1.22'` succeeds before bundling.
+
+　となるので、
+    C:\Dropbox\ror_sample>gem install mime-types -v '1.22'
+    Fetching: mime-types-1.22.gem (100%)
+    Successfully installed mime-types-1.22
+    1 gem installed
+    Installing ri documentation for mime-types-1.22...
+    unable to convert U+2013 from UTF-8 to Windows-31J for lib/mime/types.rb, skippi
+    ng
+    unable to convert "\xE2" to UTF-8 in conversion from ASCII-8BIT to UTF-8 to Wind
+    ows-31J for Licence.rdoc, skipping
+    Installing RDoc documentation for mime-types-1.22...
+    unable to convert U+2013 from UTF-8 to Windows-31J for lib/mime/types.rb, skippi
+    ng
+    unable to convert "\xE2" to UTF-8 in conversion from ASCII-8BIT to UTF-8 to Wind
+    ows-31J for Licence.rdoc, skipping
+
+　警告はでたが、一応成功してるみたいだったのだが、
+    Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=SSLv3 read
+    server certificate B: certificate verify failed (https://rubygems.org/gems/thor-
+    0.18.1.gem)
+    An error occured while installing thor (0.18.1), and Bundler cannot continue.
+    Make sure that `gem install thor -v '0.18.1'` succeeds before bundling.
+
+　で、
+    C:\Dropbox\ror_sample>gem install thor -v '0.18.1'
+    Fetching: thor-0.18.1.gem (100%)
+    Successfully installed thor-0.18.1
+    1 gem installed
+    Installing ri documentation for thor-0.18.1...
+    Installing RDoc documentation for thor-0.18.1...
+
+　それでも、
+    Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=SSLv3 read
+    server certificate B: certificate verify failed (https://rubygems.org/gems/uglif
+    ier-2.0.1.gem)
+    An error occured while installing uglifier (2.0.1), and Bundler cannot continue.
+
+    Make sure that `gem install uglifier -v '2.0.1'` succeeds before bundling.
+
+　そろそろ嫌にながら、
+    C:\Dropbox\ror_sample>gem install uglifier -v '2.0.1'
+    Fetching: uglifier-2.0.1.gem (100%)
+    Successfully installed uglifier-2.0.1
+    1 gem installed
+    Installing ri documentation for uglifier-2.0.1...
+    Installing RDoc documentation for uglifier-2.0.1...
+
+　でも、いつまでもこんなことやっているわけには行かない。
+　そこで、見つけたのがgemコマンドのupdateオプション。
+    gem update <Package>
+
+　この<Package>に「rails」を指定したらどうなるか？
+　ということで、とりあえずやってみたれということで、
+    gem update rails
+　を実行してみる。
+    C:\Dropbox\ror_sample>gem update rails
+    Updating installed gems
+    Updating rails
+    Fetching: i18n-0.6.1.gem (100%)
+    Fetching: activesupport-3.2.13.gem (100%)
+    Fetching: activemodel-3.2.13.gem (100%)
+    Fetching: sprockets-2.2.2.gem (100%)
+    Fetching: actionpack-3.2.13.gem (100%)
+    Fetching: activerecord-3.2.13.gem (100%)
+    Fetching: activeresource-3.2.13.gem (100%)
+    Fetching: mail-2.5.3.gem (100%)
+    Fetching: actionmailer-3.2.13.gem (100%)
+    Fetching: railties-3.2.13.gem (100%)
+    Fetching: rails-3.2.13.gem (100%)
+    Successfully installed i18n-0.6.1
+    Successfully installed activesupport-3.2.13
+    Successfully installed activemodel-3.2.13
+    Successfully installed sprockets-2.2.2
+    Successfully installed actionpack-3.2.13
+    Successfully installed activerecord-3.2.13
+    Successfully installed activeresource-3.2.13
+    Successfully installed mail-2.5.3
+    Successfully installed actionmailer-3.2.13
+    Successfully installed railties-3.2.13
+    Successfully installed rails-3.2.13
+    Gems updated: i18n, activesupport, activemodel, sprockets, actionpack, activerec
+    ord, activeresource, mail, actionmailer, railties, rails
+    Installing ri documentation for i18n-0.6.1...
+    unable to convert U+00C0 from UTF-8 to Windows-31J for lib/i18n/backend/translit
+    erator.rb, skipping
+    unable to convert U+00E4 from UTF-8 to Windows-31J for lib/i18n/tests/interpolat
+    ion.rb, skipping
+    unable to convert "\xC2" to UTF-8 in conversion from ASCII-8BIT to UTF-8 to Wind
+    ows-31J for lib/i18n.rb, skipping
+    Installing ri documentation for activesupport-3.2.13...
+    Installing ri documentation for activemodel-3.2.13...
+    Installing ri documentation for sprockets-2.2.2...
+    Installing ri documentation for actionpack-3.2.13...
+    Installing ri documentation for activerecord-3.2.13...
+    Installing ri documentation for activeresource-3.2.13...
+    Installing ri documentation for mail-2.5.3...
+    unable to convert U+00E9 from UTF-8 to Windows-31J for lib/mail/multibyte/chars.
+    rb, skipping
+    Installing ri documentation for actionmailer-3.2.13...
+    Installing ri documentation for railties-3.2.13...
+    Installing ri documentation for rails-3.2.13...
+    Installing RDoc documentation for i18n-0.6.1...
+    unable to convert U+00C0 from UTF-8 to Windows-31J for lib/i18n/backend/translit
+    erator.rb, skipping
+    unable to convert U+00E4 from UTF-8 to Windows-31J for lib/i18n/tests/interpolat
+    ion.rb, skipping
+    unable to convert "\xC2" to UTF-8 in conversion from ASCII-8BIT to UTF-8 to Wind
+    ows-31J for lib/i18n.rb, skipping
+    Installing RDoc documentation for activesupport-3.2.13...
+    Installing RDoc documentation for activemodel-3.2.13...
+    Installing RDoc documentation for sprockets-2.2.2...
+    Installing RDoc documentation for actionpack-3.2.13...
+    Installing RDoc documentation for activerecord-3.2.13...
+    Installing RDoc documentation for activeresource-3.2.13...
+    Installing RDoc documentation for mail-2.5.3...
+    unable to convert U+00E9 from UTF-8 to Windows-31J for lib/mail/multibyte/chars.
+    rb, skipping
+    Installing RDoc documentation for actionmailer-3.2.13...
+    Installing RDoc documentation for railties-3.2.13...
+    Installing RDoc documentation for rails-3.2.13...
+
+　かなり時間がかかったがとりあえず終了したようなので、
+    C:\Dropbox\ror_sample>rails new book
+          create
+          [ 中略 ]
+          create  vendor/plugins/.gitkeep
+             run  bundle install
+    Fetching gem metadata from https://rubygems.org/...........
+    Fetching gem metadata from https://rubygems.org/..
+    Using rake (10.0.4)
+          [ 中略 ]
+    Using uglifier (2.0.1)
+    Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem
+    is installed.
+    
+  と、ようやく成功する。（15時8分）
+
+
+　データベースにMySQLを使う。
+    C:\Dropbox\ror_sample>rails new mybook --database=mysql
+          create
+          create  README.rdoc
+          [ 中略 ]
+    Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=SSLv3 read
+    server certificate B: certificate verify failed (https://rubygems.org/gems/mysql
+    2-0.3.11-x86-mingw32.gem)
+    An error occured while installing mysql2 (0.3.11), and Bundler cannot continue.
+    Make sure that `gem install mysql2 -v '0.3.11'` succeeds before bundling.
+
+　そこで、
+    C:\Dropbox\ror_sample>gem install mysql2 -v '0.3.11'
+    Fetching: mysql2-0.3.11-x86-mingw32.gem (100%)
+
+    ================================================================================
+    ======================
+
+      You've installed the binary version of mysql2.
+      It was built using MySQL Connector/C version 6.0.2.
+      It's recommended to use the exact same version to avoid potential issues.
+
+      At the time of building this gem, the necessary DLL files where available
+      in the following download:
+
+      http://dev.mysql.com/get/Downloads/Connector-C/mysql-connector-c-noinstall-6.0
+    .2-win32.zip/from/pick
+
+      And put lib\libmysql.dll file in your Ruby bin directory, for example C:\Ruby\
+    bin
+
+    ================================================================================
+    ======================
+
+    Successfully installed mysql2-0.3.11-x86-mingw32
+    1 gem installed
+    Installing ri documentation for mysql2-0.3.11-x86-mingw32...
+    Installing RDoc documentation for mysql2-0.3.11-x86-mingw32...
+
+　やることによって、
+    C:\Dropbox\ror_sample>rails new mybook --database=mysql
+          create
+          create  README.rdoc
+          create  Rakefile
+          create  config.ru
+          create  .gitignore
+          create  Gemfile
+          create  app
+          create  app/assets/images/rails.png
+          create  app/assets/javascripts/application.js
+          create  app/assets/stylesheets/application.css
+          create  app/controllers/application_controller.rb
+          create  app/helpers/application_helper.rb
+          create  app/views/layouts/application.html.erb
+          create  app/mailers/.gitkeep
+          create  app/models/.gitkeep
+          create  config
+          create  config/routes.rb
+          create  config/application.rb
+          create  config/environment.rb
+          create  config/environments
+          create  config/environments/development.rb
+          create  config/environments/production.rb
+          create  config/environments/test.rb
+          create  config/initializers
+          create  config/initializers/backtrace_silencers.rb
+          create  config/initializers/inflections.rb
+          create  config/initializers/mime_types.rb
+          create  config/initializers/secret_token.rb
+          create  config/initializers/session_store.rb
+          create  config/initializers/wrap_parameters.rb
+          create  config/locales
+          create  config/locales/en.yml
+          create  config/boot.rb
+          create  config/database.yml
+          create  db
+          create  db/seeds.rb
+          create  doc
+          create  doc/README_FOR_APP
+          create  lib
+          create  lib/tasks
+          create  lib/tasks/.gitkeep
+          create  lib/assets
+          create  lib/assets/.gitkeep
+          create  log
+          create  log/.gitkeep
+          create  public
+          create  public/404.html
+          create  public/422.html
+          create  public/500.html
+          create  public/favicon.ico
+          create  public/index.html
+          create  public/robots.txt
+          create  script
+          create  script/rails
+          create  test/fixtures
+          create  test/fixtures/.gitkeep
+          create  test/functional
+          create  test/functional/.gitkeep
+          create  test/integration
+          create  test/integration/.gitkeep
+          create  test/unit
+          create  test/unit/.gitkeep
+          create  test/performance/browsing_test.rb
+          create  test/test_helper.rb
+          create  tmp/cache
+          create  tmp/cache/assets
+          create  vendor/assets/javascripts
+          create  vendor/assets/javascripts/.gitkeep
+          create  vendor/assets/stylesheets
+          create  vendor/assets/stylesheets/.gitkeep
+          create  vendor/plugins
+          create  vendor/plugins/.gitkeep
+             run  bundle install
+    Fetching gem metadata from https://rubygems.org/...........
+    Fetching gem metadata from https://rubygems.org/..
+    Using rake (10.0.4)
+    Using i18n (0.6.1)
+    Using multi_json (1.7.2)
+    Using activesupport (3.2.13)
+    Using builder (3.0.4)
+    Using activemodel (3.2.13)
+    Using erubis (2.7.0)
+    Using journey (1.0.4)
+    Using rack (1.4.5)
+    Using rack-cache (1.2)
+    Using rack-test (0.6.2)
+    Using hike (1.2.2)
+    Using tilt (1.3.7)
+    Using sprockets (2.2.2)
+    Using actionpack (3.2.13)
+    Using mime-types (1.22)
+    Using polyglot (0.3.3)
+    Using treetop (1.4.12)
+    Using mail (2.5.3)
+    Using actionmailer (3.2.13)
+    Using arel (3.0.2)
+    Using tzinfo (0.3.37)
+    Using activerecord (3.2.13)
+    Using activeresource (3.2.13)
+    Using bundler (1.1.5)
+    Using coffee-script-source (1.6.2)
+    Using execjs (1.4.0)
+    Using coffee-script (2.2.0)
+    Using rack-ssl (1.3.3)
+    Using json (1.7.7)
+    Using rdoc (3.12.2)
+    Using thor (0.18.1)
+    Using railties (3.2.13)
+    Using coffee-rails (3.2.2)
+    Using jquery-rails (2.2.1)
+    Using mysql2 (0.3.11)
+    Using rails (3.2.13)
+    Using sass (3.2.7)
+    Using sass-rails (3.2.6)
+    Using uglifier (2.0.1)
+    Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem
+    is installed.
+
+　とりあえずインストールに成功。
+　しかし、WEBRickを起動させようとすると、次のようにエラーになる。
+    C:\Dropbox\ror_sample\mybook>rails s
+    C:/Ruby193/lib/ruby/gems/1.9.1/gems/mysql2-0.3.11-x86-mingw32/lib/mysql2/mysql2.
+    rb:2:in `require': 126: 指定されたモジュールが見つかりません。   - C:/Ruby193/li
+    b/ruby/gems/1.9.1/gems/mysql2-0.3.11-x86-mingw32/lib/mysql2/1.9/mysql2.so (LoadE
+    rror)
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/mysql2-0.3.11-x86-mingw32/lib/m
+    ysql2/mysql2.rb:2:in `<top (required)>'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/mysql2-0.3.11-x86-mingw32/lib/m
+    ysql2.rb:9:in `require'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/mysql2-0.3.11-x86-mingw32/lib/m
+    ysql2.rb:9:in `<top (required)>'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler/runti
+    me.rb:68:in `require'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler/runti
+    me.rb:68:in `block (2 levels) in require'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler/runti
+    me.rb:66:in `each'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler/runti
+    me.rb:66:in `block in require'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler/runti
+    me.rb:55:in `each'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler/runti
+    me.rb:55:in `require'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler.rb:11
+    9:in `require'
+            from C:/Dropbox/ror_sample/mybook/config/application.rb:7:in `<top (requ
+    ired)>'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.13/lib/rails/comma
+    nds.rb:53:in `require'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.13/lib/rails/comma
+    nds.rb:53:in `block in <top (required)>'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.13/lib/rails/comma
+    nds.rb:50:in `tap'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.13/lib/rails/comma
+    nds.rb:50:in `<top (required)>'
+            from script/rails:6:in `require'
+            from script/rails:6:in `<main>'
+
+
+　確かMySQLをインストールした時に何かメッセージがあったなと思いだす。
+    C:\Dropbox\ror_sample>gem install mysql2 -v '0.3.11'
+    Fetching: mysql2-0.3.11-x86-mingw32.gem (100%)
+
+    ================================================================================
+    ======================
+
+      You've installed the binary version of mysql2.
+      It was built using MySQL Connector/C version 6.0.2.
+      It's recommended to use the exact same version to avoid potential issues.
+
+      At the time of building this gem, the necessary DLL files where available
+      in the following download:
+
+      http://dev.mysql.com/get/Downloads/Connector-C/mysql-connector-c-noinstall-6.0
+    .2-win32.zip/from/pick
+
+      And put lib\libmysql.dll file in your Ruby bin directory, for example C:\Ruby\
+    bin
+
+    ================================================================================
+    ======================
+
+　そこで、ドライバを取ってくることにするが、上のURLだと「Page not found」となるので、
+　MySQLのダウンロードサイトからConnector/cのmysql-connector-c-noinstall-6.0.2-winx64.zip
+　を取ってきて解凍し、「libmysql.dll」ファイルをC:\Ruby193\binにコピーする。
+
+　そうするも、やはり
+    C:\Dropbox\ror_sample\mybook>rails server
+    C:/Ruby193/lib/ruby/gems/1.9.1/gems/mysql2-0.3.11-x86-mingw32/lib/mysql2/mysql2.
+    rb:2:in `require': 193: %1 は有効な Win32 アプリケーションではありません。   - C
+    :/Ruby193/lib/ruby/gems/1.9.1/gems/mysql2-0.3.11-x86-mingw32/lib/mysql2/1.9/mysq
+    l2.so (LoadError)
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/mysql2-0.3.11-x86-mingw32/lib/m
+    ysql2/mysql2.rb:2:in `<top (required)>'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/mysql2-0.3.11-x86-mingw32/lib/m
+    ysql2.rb:9:in `require'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/mysql2-0.3.11-x86-mingw32/lib/m
+    ysql2.rb:9:in `<top (required)>'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler/runti
+    me.rb:68:in `require'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler/runti
+    me.rb:68:in `block (2 levels) in require'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler/runti
+    me.rb:66:in `each'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler/runti
+    me.rb:66:in `block in require'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler/runti
+    me.rb:55:in `each'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler/runti
+    me.rb:55:in `require'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/bundler-1.1.5/lib/bundler.rb:11
+    9:in `require'
+            from C:/Dropbox/ror_sample/mybook/config/application.rb:7:in `<top (requ
+    ired)>'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.13/lib/rails/comma
+    nds.rb:53:in `require'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.13/lib/rails/comma
+    nds.rb:53:in `block in <top (required)>'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.13/lib/rails/comma
+    nds.rb:50:in `tap'
+            from C:/Ruby193/lib/ruby/gems/1.9.1/gems/railties-3.2.13/lib/rails/comma
+    nds.rb:50:in `<top (required)>'
+            from script/rails:6:in `require'
+            from script/rails:6:in `<main>'
+
+　結局、
+    「193: %1 は有効な Win32 アプリケーションではありません。」のエラーはマイクロソフトの
+　サイト記事によれば、
+　　「この問題は、サービスの実行可能ファイルのパスに空白が含まれている場合に発生することがあります。」
+　　　（http://support.microsoft.com/kb/812486/ja）
+　とあるが、
+      C:/Ruby193/lib/ruby/gems/1.9.1/gems/mysql2-0.3.11-x86-mingw32/lib/mysql2/mysql2.rb:2:in `require': 
+　と示されたmysql2.rbの内容は次の2行であり、
+    RUBY_VERSION =~ /(\d+.\d+)/
+    require "mysql2/#{$1}/mysql2"
+  この「$1」の値はRuby1.9.3を使用しているので「1.9」となり、空白は含まれていない。
+
+
